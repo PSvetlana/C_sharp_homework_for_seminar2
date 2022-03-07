@@ -4,14 +4,28 @@
 1 -> нет
  */
 
+string CheckWeekend(int number) //проверка на выходной день
+{
+    string result = "";
+    if (number == 6 || number == 7)
+    {
+        result = "Да, это выходной день.";
+    }
+    else
+    {
+        result = "Нет, это рабочий день.";
+    }
+    return result;
+}
+
 Console.Write("Введите число от 1 до 7: ");
 int userNumber = Convert.ToInt32(Console.ReadLine());
-
-if (userNumber == 6 || userNumber == 7)
+if (userNumber < 1 || userNumber > 7)
 {
-    Console.Write("Да, это выходной день.");
+    Console.Write("Введенное число не входит в диапазон от 1 до 7!");
 }
 else
 {
-    Console.Write("Нет, это рабочий день.");
+    string result = CheckWeekend(userNumber);
+    Console.WriteLine($"{userNumber} - {result}");
 }
