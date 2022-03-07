@@ -5,12 +5,12 @@
 
 int GetThirdLetterOfNumber(int number) //вычисляет третью цифру числа
 {
-    int result = number;
+    //int result = number; - лишняя строчка
     while (number >= 1000) //приводим число к трехзначному
     {
         number /= 10;
     }
-    result = number % 10;
+    int result = number % 10;
     return result;
 }
 
